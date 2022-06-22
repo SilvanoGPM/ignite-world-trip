@@ -1,5 +1,9 @@
-import { Main } from '$components/Main';
+import { Center, Heading } from '@chakra-ui/react';
 
 export default function Home() {
-  return <Main />;
+  return (
+    <Center h="100vh">
+      <Heading as="h1">Hello World</Heading>
+    </Center>
+  );
 }
