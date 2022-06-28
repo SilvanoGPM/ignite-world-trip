@@ -4,6 +4,7 @@ import { Banner } from '$components/Banner';
 import { Header } from '$components/Header';
 import { TravelTypes } from '$components/TravelTypes';
 import { Divider } from '$components/Divider';
+import { ChooseContinent } from '$components/ChooseContinent';
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
       </Box>
 
       <Divider />
+
+      <ChooseContinent />
     </>
   );
 }
