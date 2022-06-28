@@ -1,4 +1,4 @@
-import { Center, Image, Text } from '@chakra-ui/react';
+import { Box, Center, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 
 interface TravelTypeProps {
   image: string;
@@ -6,16 +6,24 @@ interface TravelTypeProps {
 }
 
 export function TravelType({ title, image }: TravelTypeProps) {
+  const isSmallVersion = useBreakpointValue({
+    base: false,
+    sm: true,
+  });
+
   return (
-    <Center flexDir="column" flex="1" minW="150" mb={[8, 8, 0]}>
-      <Image src={image} alt={title} w="85" h="85" />
+    <Center flexDir={['row', 'column']} flex="1" minW="150" mb={[8, 8, 0]}>
+      {isSmallVersion ? (
+        <Image src={image} alt={title} w="85" h="85" mb="6" />
+      ) : (
+        <Box w="8px" h="8px" bg="brand.500" borderRadius="full" mr="2" />
+      )}
 
       <Text
-        fontWeight={600}
+        fontWeight={[500, 600]}
         textTransform="lowercase"
         align="center"
-        fontSize="24"
-        mt="6"
+        fontSize={['15', '24']}
       >
         {title}
       </Text>
