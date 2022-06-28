@@ -12,16 +12,16 @@ export function Banner() {
         align="center"
       >
         <Box color="gray.100">
-          <Heading fontWeight={500} mb="5">
+          <Heading fontWeight={500} mb="5" fontSize={['2xl', '3xl', '4xl']}>
             5 Continentes, <br /> infinitas possibilidades.
           </Heading>
 
-          <Text fontSize="20" maxW="524">
+          <Text fontSize={['lg', '2xl']} fontWeight={400} maxW="524">
             Chegou a hora de tirar do papel a viagem que você sempre sonhou.
           </Text>
         </Box>
 
-        <Box mt="100">
+        <Box mt="100" display={['none', 'none', 'block']}>
           <Image src="/images/airplane.svg" alt="Avião com nuvens ao redor" />
         </Box>
       </Flex>
