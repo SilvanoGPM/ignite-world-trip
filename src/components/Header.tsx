@@ -8,7 +8,7 @@ interface HeaderProps {
 
 export function Header({ showBackButton = false }: HeaderProps) {
   return (
-    <Box pos="relative" maxW={1200} mx="auto">
+    <Box as="header" pos="relative" maxW={1200} mx="auto">
       {showBackButton && (
         <Button
           pos="absolute"
@@ -28,7 +28,11 @@ export function Header({ showBackButton = false }: HeaderProps) {
       <Center h={100}>
         <Link href="/">
           <a>
-            <Image src="/images/logo.svg" alt="WorldTrips Logo" />
+            <Image
+              src="/images/logo.svg"
+              alt="WorldTrips Logo"
+              width={{ base: '150px', md: '184px' }}
+            />
           </a>
         </Link>
       </Center>

@@ -11,15 +11,17 @@ export default function Home() {
     <>
       <Header />
 
-      <Banner />
+      <main>
+        <Banner />
 
-      <Box maxW={1200} w="100%" px="4" mx="auto" mt="20">
-        <TravelTypes />
-      </Box>
+        <Box maxW={1200} w="100%" px="4" mx="auto" mt="20">
+          <TravelTypes />
+        </Box>
 
-      <Divider />
+        <Divider />
 
-      <ChooseContinent />
+        <ChooseContinent />
+      </main>
     </>
   );
 }
