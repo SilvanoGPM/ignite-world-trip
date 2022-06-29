@@ -42,7 +42,7 @@ export function Continent({ image, slug, title, subTitle }: ContinentProps) {
         w="100%"
         h="100%"
       >
-        <Link href={`/continents/${slug}`}>
+        <Link href={`/continent/${slug}`}>
           <a>
             <Heading as="h2" fontSize="4xl" lineHeight="72px" fontWeight={700}>
               {title}
