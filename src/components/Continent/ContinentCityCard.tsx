@@ -29,11 +29,28 @@ export function ContinentCityCard({
         flex="1"
       >
         <Flex justify="space-between" flexDir="column" h="full">
-          <Heading as="h4" fontSize="xl" fontWeight={600}>
+          <Heading
+            as="h4"
+            fontSize="xl"
+            fontWeight={600}
+            title={name}
+            maxW="80%"
+            whiteSpace="nowrap"
+            overflow="hidden"
+            textOverflow="ellipsis"
+          >
             {name}
           </Heading>
 
-          <Text fontSize="md" color="gray.300">
+          <Text
+            fontSize="md"
+            color="gray.300"
+            title={country.name}
+            whiteSpace="nowrap"
+            overflow="hidden"
+            maxW="80%"
+            textOverflow="ellipsis"
+          >
             {country.name}
           </Text>
         </Flex>
