@@ -7,7 +7,7 @@ interface ContinentBannerProps {
 
 export function ContinentBanner({ title, image }: ContinentBannerProps) {
   return (
-    <Box pos="relative" w="full" h={[150, 300, 500]}>
+    <Box pos="relative" w="full" h={[150, 300, 500]} mb="16">
       <Box pos="absolute" top="0" bottom="0" left="0" right="0">
         <Image
           width="full"
