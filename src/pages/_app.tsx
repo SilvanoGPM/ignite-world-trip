@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Head>
-        <title>WorldTrips</title>
+        <title>World Trips</title>
       </Head>
 
       <NextNProgress color="#FFBA08" height={4} />

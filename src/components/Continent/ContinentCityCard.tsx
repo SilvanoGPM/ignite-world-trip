@@ -28,13 +28,12 @@ export function ContinentCityCard({
         roundedBottom="md"
         flex="1"
       >
-        <Flex justify="space-between" flexDir="column" h="full">
+        <Flex justify="space-between" flexDir="column" h="full" maxW="80%">
           <Heading
             as="h4"
             fontSize="xl"
             fontWeight={600}
             title={name}
-            maxW="80%"
             whiteSpace="nowrap"
             overflow="hidden"
             textOverflow="ellipsis"
@@ -48,7 +47,6 @@ export function ContinentCityCard({
             title={country.name}
             whiteSpace="nowrap"
             overflow="hidden"
-            maxW="80%"
             textOverflow="ellipsis"
           >
             {country.name}

@@ -16,8 +16,11 @@ export default function Document() {
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-        <meta name="description" content="Boilerplate for NextJS projects" />
-        <meta name="theme-color" content="#FFFFFF" />
+        <meta
+          name="description"
+          content="Informações sobre os continentes e suas cidades mais famosas"
+        />
+        <meta name="theme-color" content="#FFBA08" />
       </Head>
 
       <body>

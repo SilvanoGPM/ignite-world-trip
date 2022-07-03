@@ -14,6 +14,7 @@ import {
   GetContinentBySlugQuery,
   GetContinentSlugsQuery,
 } from '$graphql/generated/graphql';
+import Head from 'next/head';
 
 interface ContinentProps {
   continent: ContinentType;
@@ -28,6 +29,10 @@ export default function Continent({ continent }: ContinentProps) {
 
   return (
     <>
+      <Head>
+        <title>{continent.name} - World Trips</title>
+      </Head>
+
       <Header showBackButton />
 
       <main>
