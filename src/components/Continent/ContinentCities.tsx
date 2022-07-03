@@ -1,8 +1,14 @@
 import { Box, Flex, Heading } from '@chakra-ui/react';
 
+import { City } from '$types/general';
+
 import { ContinentCityCard } from './ContinentCityCard';
 
-export function ContinentCities() {
+interface ContinentCitiesProps {
+  cities: City[];
+}
+
+export function ContinentCities({ cities }: ContinentCitiesProps) {
   return (
     <Box mt="20">
       <Heading
@@ -19,35 +25,9 @@ export function ContinentCities() {
         gap="2.3rem"
         justifyContent={['center', 'center', 'start']}
       >
-        <ContinentCityCard
-          image="/images/england.png"
-          city="Londres"
-          country={{ image: '/images/united-kingdom.png', name: 'Reino Unido' }}
-        />
-
-        <ContinentCityCard
-          image="/images/england.png"
-          city="Londres"
-          country={{ image: '/images/united-kingdom.png', name: 'Reino Unido' }}
-        />
-
-        <ContinentCityCard
-          image="/images/england.png"
-          city="Londres"
-          country={{ image: '/images/united-kingdom.png', name: 'Reino Unido' }}
-        />
-
-        <ContinentCityCard
-          image="/images/england.png"
-          city="Londres"
-          country={{ image: '/images/united-kingdom.png', name: 'Reino Unido' }}
-        />
-
-        <ContinentCityCard
-          image="/images/england.png"
-          city="Londres"
-          country={{ image: '/images/united-kingdom.png', name: 'Reino Unido' }}
-        />
+        {cities.map((city) => (
+          <ContinentCityCard key={city.name} {...city} />
+        ))}
       </Flex>
     </Box>
   );

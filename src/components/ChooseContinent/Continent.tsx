@@ -1,14 +1,16 @@
 import { Box, Center, Heading, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 
+import { ImageAsset } from '$types/general';
+
 interface ContinentProps {
-  image: string;
+  image: ImageAsset;
   slug: string;
+  name: string;
   title: string;
-  subTitle: string;
 }
 
-export function Continent({ image, slug, title, subTitle }: ContinentProps) {
+export function Continent({ image, slug, title, name }: ContinentProps) {
   return (
     <Box
       h="450"
@@ -21,7 +23,7 @@ export function Continent({ image, slug, title, subTitle }: ContinentProps) {
           left: 0,
           width: '100%',
           height: '100%',
-          bg: `url(${image})`,
+          bg: `url(${image.url})`,
           bgSize: 'cover',
           bgPos: 'center',
           filter: 'brightness(0.8)',
@@ -45,12 +47,12 @@ export function Continent({ image, slug, title, subTitle }: ContinentProps) {
         <Link href={`/continent/${slug}`}>
           <a>
             <Heading as="h2" fontSize="4xl" lineHeight="72px" fontWeight={700}>
-              {title}
+              {name}
             </Heading>
           </a>
         </Link>
 
-        <Text fontWeight={700}>{subTitle}</Text>
+        <Text fontWeight={700}>{title}</Text>
       </Center>
     </Box>
   );

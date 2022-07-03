@@ -1,19 +1,21 @@
 import { Flex, Heading, Image, Text } from '@chakra-ui/react';
 
+import type { Country, ImageAsset } from '$types/general';
+
 interface ContinentCityCardProps {
-  image: string;
-  city: string;
-  country: { image: string; name: string };
+  name: string;
+  image: ImageAsset;
+  country: Country;
 }
 
 export function ContinentCityCard({
   image,
-  city,
+  name,
   country,
 }: ContinentCityCardProps) {
   return (
     <Flex w="256px" h="279px" rounded="md" overflow="hidden" flexDir="column">
-      <Image src={image} w="full" h="173px" />
+      <Image src={image.url} w="full" h="173px" />
 
       <Flex
         align="center"
@@ -28,7 +30,7 @@ export function ContinentCityCard({
       >
         <Flex justify="space-between" flexDir="column" h="full">
           <Heading as="h4" fontSize="xl" fontWeight={600}>
-            {city}
+            {name}
           </Heading>
 
           <Text fontSize="md" color="gray.300">
@@ -37,7 +39,7 @@ export function ContinentCityCard({
         </Flex>
 
         <Image
-          src={country.image}
+          src={country.image.url}
           alt={country.name}
           rounded="full"
           w="30px"

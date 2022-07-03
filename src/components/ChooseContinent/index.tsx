@@ -1,8 +1,13 @@
 import { Box, Heading } from '@chakra-ui/react';
+import type { Continent } from '$types/general';
 
 import { ContinentsSlider } from './ContinentsSlider';
 
-export function ChooseContinent() {
+interface ChooseContinentProps {
+  continents: Continent[];
+}
+
+export function ChooseContinent({ continents }: ChooseContinentProps) {
   return (
     <Box maxW={1200} w="100%" px="4" mx="auto" mb="6">
       <Heading
@@ -15,7 +20,7 @@ export function ChooseContinent() {
         Vamos nessa? <br /> Então escolha seu continente
       </Heading>
 
-      <ContinentsSlider />
+      <ContinentsSlider continents={continents} />
     </Box>
   );
 }
