@@ -48,3 +48,11 @@ export const GET_CONTINENT_BY_SLUG = gql`
     }
   }
 `;
+
+export const GET_CONTINENT_SLUGS = gql`
+  query getContinentSlugs($first: Int) {
+    continents(first: $first) {
+      slug
+    }
+  }
+`;

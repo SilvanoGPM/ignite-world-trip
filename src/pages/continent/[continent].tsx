@@ -1,5 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { useRouter } from 'next/router';
 
 import type { Continent as ContinentType } from '$types/general';
 import { ContinentCities } from '$components/Continent/ContinentCities';
@@ -7,8 +8,12 @@ import { Header } from '$components/Header';
 import { ContinentBanner } from '$components/Continent/ContinentBanner';
 import { ContinentDescription } from '$components/Continent/ContinentDescription';
 import client from '$graphql/client';
-import { GET_CONTINENT_BY_SLUG } from '$graphql/queries';
-import { useRouter } from 'next/router';
+import { GET_CONTINENT_BY_SLUG, GET_CONTINENT_SLUGS } from '$graphql/queries';
+
+import {
+  GetContinentBySlugQuery,
+  GetContinentSlugsQuery,
+} from '$graphql/generated/graphql';
 
 interface ContinentProps {
   continent: ContinentType;
@@ -44,17 +49,34 @@ export default function Continent({ continent }: ContinentProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  return { paths: [], fallback: true };
+  const { continents } = await client.request<GetContinentSlugsQuery>(
+    GET_CONTINENT_SLUGS,
+    {
+      first: 5,
+    },
+  );
+
+  const paths = continents.map(({ slug }) => ({
+    params: { continent: slug! },
+  }));
+
+  return { paths, fallback: true };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { continent } = await client.request(GET_CONTINENT_BY_SLUG, {
-    slug: params?.continent,
-  });
+  const { continent } = await client.request<GetContinentBySlugQuery>(
+    GET_CONTINENT_BY_SLUG,
+    {
+      slug: params?.continent,
+    },
+  );
 
   if (!continent) {
     return { notFound: true };
   }
 
-  return { props: { continent } };
+  return {
+    props: { continent },
+    revalidate: 60 * 60 * 24, // 24 hours
+  };
 };

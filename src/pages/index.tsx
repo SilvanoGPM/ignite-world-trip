@@ -9,6 +9,7 @@ import { Divider } from '$components/Divider';
 import { ChooseContinent } from '$components/ChooseContinent';
 import client from '$graphql/client';
 import { GET_PREVIEW_CONTINENTS } from '$graphql/queries';
+import { GetPreviewContinentsQuery } from '$graphql/generated/graphql';
 
 interface HomeProps {
   continents: Continent[];
@@ -35,7 +36,12 @@ export default function Home({ continents }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { continents } = await client.request(GET_PREVIEW_CONTINENTS);
+  const { continents } = await client.request<GetPreviewContinentsQuery>(
+    GET_PREVIEW_CONTINENTS,
+  );
 
-  return { props: { continents: continents || [] } };
+  return {
+    props: { continents: continents || [] },
+    revalidate: 60 * 60 * 24, // 24 hours
+  };
 };
