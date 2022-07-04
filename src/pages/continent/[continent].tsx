@@ -36,9 +36,9 @@ export default function Continent({ continent }: ContinentProps) {
         openGraph={{
           images: [
             {
-              url: continent.image.url,
-              width: continent.image.width,
-              height: continent.image.height,
+              url: continent.banner.url,
+              width: continent.banner.width,
+              height: continent.banner.height,
               alt: continent.name,
             },
           ],
