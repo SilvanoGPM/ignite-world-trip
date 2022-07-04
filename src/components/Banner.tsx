@@ -22,7 +22,10 @@ export function Banner() {
         </Box>
 
         <Box mt="100" display={['none', 'none', 'block']}>
-          <Image src="/images/airplane.svg" alt="Avião com nuvens ao redor" />
+          <Image
+            src="/images/airplane.svg"
+            alt="Avião amarelo com nuvens ao redor"
+          />
         </Box>
       </Flex>
     </Flex>

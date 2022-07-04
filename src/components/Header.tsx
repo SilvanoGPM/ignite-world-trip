@@ -30,7 +30,7 @@ export function Header({ showBackButton = false }: HeaderProps) {
           <a>
             <Image
               src="/images/logo.svg"
-              alt="WorldTrips Logo"
+              alt="Nome World Trip com avião voando na ponta"
               width={{ base: '150px', md: '184px' }}
             />
           </a>

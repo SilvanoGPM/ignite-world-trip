@@ -1,6 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
+import { NextSeo } from 'next-seo';
 
 import type { Continent as ContinentType } from '$types/general';
 import { ContinentCities } from '$components/Continent/ContinentCities';
@@ -14,7 +15,6 @@ import {
   GetContinentBySlugQuery,
   GetContinentSlugsQuery,
 } from '$graphql/generated/graphql';
-import Head from 'next/head';
 
 interface ContinentProps {
   continent: ContinentType;
@@ -29,9 +29,21 @@ export default function Continent({ continent }: ContinentProps) {
 
   return (
     <>
-      <Head>
-        <title>{continent.name} - World Trips</title>
-      </Head>
+      <NextSeo
+        title={`${continent.name} - World Trip`}
+        description={continent.description}
+        canonical="https://world-trip-sky.netlify.app/"
+        openGraph={{
+          images: [
+            {
+              url: continent.image.url,
+              width: continent.image.width,
+              height: continent.image.height,
+              alt: continent.name,
+            },
+          ],
+        }}
+      />
 
       <Header showBackButton />
 

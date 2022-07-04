@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import { Box } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
 
 import type { Continent } from '$types/general';
 import { Banner } from '$components/Banner';
@@ -18,6 +19,23 @@ interface HomeProps {
 export default function Home({ continents }: HomeProps) {
   return (
     <>
+      <NextSeo
+        title="Home - World Trip"
+        description="Informações sobre os continentes e suas cidades mais famosas."
+        canonical="https://world-trip-sky.netlify.app/"
+        openGraph={{
+          site_name: 'World Trip',
+          images: [
+            {
+              url: 'https://world-trip-sky.netlify.app/images/cover.png',
+              width: 1280,
+              height: 720,
+              alt: 'World Trip',
+            },
+          ],
+        }}
+      />
+
       <Header />
 
       <main>

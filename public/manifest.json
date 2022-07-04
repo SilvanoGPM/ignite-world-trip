@@ -1,6 +1,6 @@
 {
-  "name": "World Traveling",
-  "short_name": "World Traveling",
+  "name": "World Trip",
+  "short_name": "World Trip",
   "icons": [
     {
       "src": "/icons/android-icon-16x16.png",
@@ -28,7 +28,7 @@
     }
   ],
   "theme_color": "#FFBA08",
-  "description": "Informações sobre os continentes e suas cidades mais famosas",
+  "description": "Informações sobre os continentes e suas cidades mais famosas.",
   "background_color": "#FFFFFF",
   "start_url": "/",
   "display": "standalone",
