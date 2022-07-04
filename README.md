@@ -1,33 +1,20 @@
-<h1 align="center">Next Boilerplate</h1>
-<p align="center"> Boilerplate for NextJS projects</p>
+<h1 align="center">World Trip</h1>
+<p align="center">Informações sobre os continentes e suas cidades mais famosas</p>
 
 <p align="center">
   <img src="public/icons/android-chrome-192x192.png" />
 </p>
 
-## ⚙️ Already configured
+## 🚀 Tecnologias utilizadas
 
-- Typescript
-- Jest
-- React Testing Library
-- PWA Support
-- ESLint
-- Prettier
-- Editorconfig
-- Husky
+- [React](https://pt-br.reactjs.org/)
+- [Next](https://nextjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Chakra UI](https://chakra-ui.com/)
+- [GraphQL](https://graphql.org/)
+- [Swiper](https://swiperjs.com/)
 
-## 🔨 How to use
+## ❤️ Agradecimentos
 
-In terminal use:
-
-```bash
-# npm
-npx create-next-app -e https://github.com/SkyG0D/next-boilerplate
-
-# yarn
-yarn create next-app -e https://github.com/SkyG0D/next-boilerplate
-```
-
-## ❤️ Contributions
-
-Open a PR to contribute to the project.
+- [Ignite](https://www.rocketseat.com.br/ignite)
+- [Layout](https://www.figma.com/file/Z5wZWRbfcHZmxHVqJ43tPH/Desafio-1-M%C3%B3dulo-4-ReactJS-(Copy))
